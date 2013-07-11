@@ -1,0 +1,22 @@
+<div ng-controller="SearchController">
+    <div class="well-large">
+        <form class="form-inline" name="searchForm">
+            <input type="text" ng-model="keywords" placeholder="Enter search" name="keywords"> 
+            <button class="btn" ng-click="search_item()"><i class="icon-search"></i></button>
+          
+            <div ng-repeat="parameter in parameters" id="{{parameter.group}">
+                <strong>{{parameter.group}}</strong> 
+                <button ng-click="tickNone($index)" class="btn-mini" >Tick None</button>
+                <button ng-click="tickAll($index)" class="btn-mini" >Tick All</button>
+                <ul>
+                    <li ng-repeat="item in parameter.items">
+                        <input type="checkbox" ng-model="item.checked"> <label>{{item.name}}</label>
+                    </li>
+                </ul>
+            </div>
+        </form> 
+    </div>
+    
+</div>
+
+

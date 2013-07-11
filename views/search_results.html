@@ -1,0 +1,21 @@
+<div class="span12" ng-controller="SearchController" ng-init="search_item()">
+    <div id="resultsPage">
+        <div class="span12">
+            <div ng-repeat="object in search_results.data" ng-click="viewObject()" class="row">
+                <div class="span12">
+                    <div class="inline">
+                        <img ng-src="{{object.MediaObjects.Images.small}}" />
+                    </div>
+                    <div>
+                        <strong>{{object.Object}}</strong><br/>
+                        <p>{{object.Description}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <button class="btn" ng-click="current_page=current_page-1">Previous</button> <button class="btn" ng-click="current_page=current_page+1">Next</button>
+</div>
+</div>

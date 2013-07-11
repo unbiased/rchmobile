@@ -1,0 +1,270 @@
+{
+    "parameters":[
+        {
+            "group": "Object Type",
+            "key": "objecttype",
+            "params":[
+                {
+                    "name":"Body adornment, jewellery",
+                    "value":"body adornment,jewellery"
+                },
+                {
+                    "name":"containers, vessels",
+                    "value":"Containers, vessels"
+                },
+                {
+                    "name":"Costume, dress",
+                    "value":"costume, dress"
+                },
+                {
+                    "name":"Currency",
+                    "value":"currency"
+                },
+                {
+                    "name":"Domestic equipment",
+                    "value":"domestic equipment"
+                },
+                {
+                    "name":"Figures, sculture",
+                    "value":"figures, sculture"
+                },
+                {
+                    "name":"Games, toys, models",
+                    "value":"games, toys, models"
+                },
+                {
+                    "name":"Hunting, fishing",
+                    "value":"hunting, fishing"
+                },
+                {
+                    "name":"Ivories",
+                    "value":"ivories"
+                },
+                {
+                    "name":"Masks, headdresses",
+                    "value":"masks, headdresses"
+                },
+                {
+                    "name":"Musical instruments",
+                    "value":"musical instruments"
+                },
+                {
+                    "name":"Photograph",
+                    "value":"photograph"
+                },
+                {
+                    "name":"Production equipment",
+                    "value":"production equipment"
+                },
+                {
+                    "name":"Regalia",
+                    "value":"regalia"
+                },
+                {
+                    "name":"Religious equipment, ritual equipment, charms",
+                    "value":"religious equipment, ritual equipment, charms"
+                },
+                {
+                    "name":"Sound Recordings",
+                    "value":"wax cylinder recordings"
+                },
+                {
+                    "name":"Textiles, cloth",
+                    "value":"textiles, cloth"
+                },
+                {
+                    "name":"Toilet equipment, cosmetic equipment",
+                    "value":"Toilet equipment, cosmetic equipment"
+                },
+                {
+                    "name":"Tools, implements",
+                    "value":"tools, implements"
+                },
+                {
+                    "name":"Transport",
+                    "value":"transport"
+                },
+                {
+                    "name":"Weapons, armour",
+                    "value":"weapons, armour"
+                },
+                {
+                    "name":"Unknown",
+                    "value":"Unknown"
+                }                
+            ]
+        },
+        {
+            "group": "Materials",
+            "key": "materials",
+            "params":[
+                {
+                    "name":"Bone, ivory, tooth",
+                    "value":"Bone, ivory, tooth"
+                },
+                {
+                    "name":"Ceramic",
+                    "value":"Ceramic"
+                },
+                {
+                    "name":"Feather, fur, hair, horn",
+                    "value":"feather, fur, hair, horn"
+                },
+                {
+                    "name":"Glass",
+                    "value":"glass"
+                },
+                {
+                    "name":"Leather, animal skin",
+                    "value":"leather, animal skin"
+                },
+                {
+                    "name":"Metal",
+                    "value":"metal"
+                },
+                {
+                    "name":"Paper",
+                    "value":"paper"
+                },
+                {
+                    "name":"Shell",
+                    "value":"shell"
+                },
+                {
+                    "name":"Stone",
+                    "value":"stone"
+                },
+                {
+                    "name":"Textile",
+                    "value":"textile"
+                },
+                {
+                    "name":"Vegetable, organic fiber",
+                    "value":"vegetable, organic fiber"
+                },
+                {
+                    "name":"Wood",
+                    "value":"wood"
+                },
+                {
+                    "name":"Unknown",
+                    "value":"Unknown"
+                }
+            ]
+        },
+        {
+            "group": "Collection",
+            "key": "museum",
+            "params":[
+                {
+                    "name":"Sierra Leone National Museum",
+                    "value":"Sierra Leone National Museum"
+                },
+                {
+                    "name":"Brighton Museum & Art Gallery",
+                    "value":"Brighton Museum &amp; Art Gallery"
+                },
+                {
+                    "name":"British Museum",
+                    "value":"British Museum"
+                },
+                {
+                    "name":"Glasgow Museum",
+                    "value":"Glasgow Museums"
+                },
+                {
+                    "name":"World Museum Liverpool",
+                    "value":"World Museum Liverpool"
+                },
+                {
+                    "name":"British Library",
+                    "value":"British Library Sound Archive"
+                },
+                {
+                    "name":"Cootje van Oven Collection",
+                    "value":"Cootje van Oven Collection"
+                }
+                
+            ]
+        },
+        {
+            "group": "Materials",
+            "key": "materials",
+            "params":[
+                {
+                    "name":"Bullom",
+                    "value":"bullom"
+                },
+                {
+                    "name":"Fula",
+                    "value":"fula"
+                },
+                {
+                    "name":"Gola",
+                    "value":"gola"
+                },
+                {
+                    "name":"Kisi",
+                    "value":"kisi"
+                },
+                {
+                    "name":"Kono",
+                    "value":"kono"
+                },
+                {
+                    "name":"Krim",
+                    "value":"krim"
+                },
+                {
+                    "name":"Krio",
+                    "value":"krio"
+                },
+                {
+                    "name":"Kuranko",
+                    "value":"kuranko"
+                },
+                {
+                    "name":"Limba",
+                    "value":"limba"
+                },
+                {
+                    "name":"Loko",
+                    "value":"loko"
+                },
+                {
+                    "name":"Mandingo",
+                    "value":"mandingo"
+                },
+                {
+                    "name":"Mende",
+                    "value":"mende"
+                },
+                {
+                    "name":"Sherbro",
+                    "value":"sherbro"
+                },
+                {
+                    "name":"Soso",
+                    "value":"soso"
+                },
+                {
+                    "name":"Temne",
+                    "value":"temne"
+                },
+                {
+                    "name":"Vai",
+                    "value":"vai"
+                },
+                {
+                    "name":"Yalunka",
+                    "value":"yalunka"
+                },
+                {
+                    "name":"Unknown",
+                    "value":"Unknown"
+                }                
+            ]
+        }
+        
+    ]
+}
