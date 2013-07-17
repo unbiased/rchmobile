@@ -1,7 +1,7 @@
-<div class="span12" ng-controller="SearchController" ng-init="search_item()">
+<div class="span12" ng-controller="SearchController">
     <div id="resultsPage">
         <div class="span12">
-            <div ng-repeat="object in search_results.data" ng-click="viewObject()" class="row">
+            <div ng-repeat="object in search_results.data" ng-click="viewObject(object.COId)" class="row">
                 <div class="span12">
                     <div class="inline">
                         <img ng-src="{{object.MediaObjects.Images.small}}" />

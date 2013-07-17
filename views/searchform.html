@@ -1,7 +1,7 @@
-<div ng-controller="SearchController">
+<div ng-controller="SearchController"  ng-init="init()" >
     <div class="well-large">
         <form class="form-inline" name="searchForm">
-            <input type="text" ng-model="keywords" placeholder="Enter search" name="keywords"> 
+            <input type="text" ng-model="keywords" placeholder="Enter search" name="keywords" value=""> 
             <button class="btn" ng-click="search_item()"><i class="icon-search"></i></button>
           
             <div ng-repeat="parameter in parameters" id="{{parameter.group}">
@@ -15,6 +15,25 @@
                 </ul>
             </div>
         </form> 
+    </div>
+<!--    Search Form section-->
+<div class="span12" id="searchResult">
+    <div id="resultsPage">
+        <div class="span12">
+            <div ng-repeat="object in search_results.data" ng-click="viewObject(object.COId)" class="row">
+                <div class="span12">
+                    <div class="inline">
+                        <img ng-src="{{object.MediaObjects.Images.small}}" />
+                    </div>
+                    <div>
+                        <strong>{{object.Object}}</strong><br/>
+                        <p>{{object.Description}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button class="btn" ng-click="current_page=current_page-1">Previous</button> <button class="btn" ng-click="current_page=current_page+1">Next</button>
     </div>
     
 </div>

@@ -1,24 +1,16 @@
 
 //define home controller
 App.controller("SearchController",function($scope,$location,searchSvc){
-    //get search parameters to display
-    $scope.parameters = searchSvc.getParameters();
-    $scope.num_of_pages;  
-    $scope.current_page;
-    $scope.show_form = true;
-    $scope.load_more = true;
-    
-    
+     //get search parameters to display      
         
     //method to send and retrieve search results
     $scope.search_item = function(){
             searchSvc.offset = $scope.current_page * searchSvc.pageSize ;            
             //set the keywords
-            searchSvc.keywords = $scope.keywords;
+            searchSvc.keywords = ($scope.keywords === undefined)? "":$scope.keywords ;
             //set the parameters for search
             searchSvc.parameters = $scope.parameters;
-            searchSvc.search_item().then($scope.buildResult); 
-            
+            searchSvc.search_item().then($scope.buildResult);       
     };
     
     $scope.tickNone = function(i){
@@ -37,25 +29,32 @@ App.controller("SearchController",function($scope,$location,searchSvc){
         }
     };    
     
-    $scope.viewObject = function(){
-        alert("Viewing object now");
+    $scope.viewObject = function(index){
+        $location.path("/viewobject/"+index);
     }
     
        
     
     $scope.buildResult = function(data,status){
+        $scope.show_form = false;
         var tempResult = data.data.results;
         if(tempResult !== undefined && ($scope.current_page === undefined || $scope.current_page === 0 )){
                 $scope.search_results = tempResult;
                 $scope.num_of_pages = Math.floor($scope.search_results.count/searchSvc.pageSize);
                 $scope.current_page = 0;
+                $scope.hide_form = true;
             }else if($scope.search_results.resultcount > 0 && $scope.current_page > 0){
-                $scope.search_results = tempResult;                
+                $scope.search_results = tempResult;
+                $scope.hide_form = true;
             }           
     };
     
     $scope.init = function(){
-        
+        $scope.num_of_pages = 0;
+        $scope.current_page = 0;
+        $scope.hide_form = false;
+        $scope.load_more = true;
+        $scope.parameters = searchSvc.getParameters();
     }
     
     $scope.$watch("current_page",function(newvalue,oldvalue){

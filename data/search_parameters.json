@@ -2,7 +2,7 @@
     "parameters":[
         {
             "group": "Object Type",
-            "key": "objecttype",
+            "key": "ObjectType",
             "params":[
                 {
                     "name":"Body adornment, jewellery",
@@ -96,7 +96,7 @@
         },
         {
             "group": "Materials",
-            "key": "materials",
+            "key": "Materials",
             "params":[
                 {
                     "name":"Bone, ivory, tooth",
@@ -154,7 +154,7 @@
         },
         {
             "group": "Collection",
-            "key": "museum",
+            "key": "Museum",
             "params":[
                 {
                     "name":"Sierra Leone National Museum",
@@ -188,8 +188,8 @@
             ]
         },
         {
-            "group": "Materials",
-            "key": "materials",
+            "group": "Culture Group",
+            "key": "CultureGroup",
             "params":[
                 {
                     "name":"Bullom",

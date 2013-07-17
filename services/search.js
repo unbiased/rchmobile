@@ -70,13 +70,17 @@ searchService.service("searchSvc", ["$http", function($http) {
                     }
                 }
             }
-            url = "http://localhost/sites/v12.8/index.php/service/restservice/search_item/";
+            url = "http://localhost/sites/v12.8/index.php/api/search_service/search_item/";
             url += "offset/" + this.offset + "/size/" + this.pageSize + "/format/json";
             var search_params = {"keywords": this.keywords, "data": categories};
 
             return  $http.post(url, search_params);
         };
 
+        search.fetch_object = function(coid){            
+            var url = "http://localhost/sites/v12.8/index.php/api/search_service/fetch_item/coid/"+coid+"/format/json";
+            return $http.get(url);
+        }
 
         return search;
     }]);
