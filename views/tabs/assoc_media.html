@@ -1,1 +1,11 @@
-<p>Yes this is the associated media objects</p>
+
+<ul class="thumbnails">
+	<li ng-repeat="media in object_info.associated_media">
+					<div class="thumbnail" >
+						<a ng-href="#/media_player/{{media.AMOId}}">
+                        <img ng-src="{{media.MediaObjects.small}}" alt="{{media.MediaObjects.AssociatedMediaTitle}}" />        
+                        </a>
+                    </div>
+	</li>
+</ul>
+

@@ -1,0 +1,28 @@
+<div class="row-fluid" ng-controller="BrowseController" ng-init="init()">
+<form>
+<div class="span12">
+<label for="collection" class="control-label">Collection </label> 
+<select name="collection" id="collection" ng-model="selected_museum" ng-options="names.Museum for names in museum_names" class="span3">
+</select>
+<!-- display data region beginning-->
+
+<!-- display results as thumbnails -->
+<ul class="thumbnails span12">
+<li class="span4" ng-repeat="object in collections.Objects">
+		<div class="thumbnail">
+		<a ng-href="#/viewobject/{{object.COId}}">
+			<img ng-src="{{object.MediaObjects.Media[0].Media.medium}}" alt="{{object.Object}}" width="auto" height="auto"  class="img-rounded" />
+			<h4 class="text-center">{{object.Object}}</h4>
+			</a>
+		</div>
+	</li>		
+</ul>
+<div class="span12">
+	<button ng-click="current_page = current_page - 1" class="btn span2"><i class="icon-chevron-left"></i></button> <button class="btn span2" ng-click="current_page = current_page + 1"><i class="icon-chevron-right"></i></button>
+</div>
+
+</div>
+<!-- end of disply records -->
+</div>
+</form>
+</div>

@@ -8,6 +8,9 @@ App.controller("ViewObjectController",["$scope","$routeParams","searchSvc",funct
 	$scope.displayObject = function(data,status){
 		if(data.data.status === "success"){
 			$scope.object_info = data.data.data;
+			if($scope.object_info.Media.length  === 0){
+				$scope.hide_carousel = true;
+			}
 		}
 	}
 
@@ -20,12 +23,28 @@ App.controller("ViewObjectController",["$scope","$routeParams","searchSvc",funct
 		switch(newValue){
 			case "relatedobjects":
 				//fetch related object and load to view..with pagination
+				var coid = $scope.object_info.COId;
+				if($scope.object_info.related_objects === undefined){
+					searchSvc.fetch_related_objects(coid).then($scope.loadRelatedObjects);
+				}
 			break;
 			case "media":
 				//fetch media if available
+				var coid = $scope.object_info.COId;
+				if($scope.object_info.associated_media === undefined){
+					searchSvc.fetch_associated_media(coid).then($scope.loadAssocMedia);
+				}
 			break;
 
 
 		}
 	});
+
+	$scope.loadRelatedObjects = function(data,status){
+		$scope.object_info.related_objects = data.data.data;
+	}
+
+	$scope.loadAssocMedia = function(data,status){
+		$scope.object_info.associated_media = data.data.data;
+	}
 }]);

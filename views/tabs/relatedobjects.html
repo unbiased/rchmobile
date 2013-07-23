@@ -1,1 +1,15 @@
-<p>Yes this is the related object</p>
+<ul class="media-list thumbnails">
+            <li ng-repeat="object in object_info.related_objects" class="media span12">
+                  <a class="pull-left" ng-href="#/viewobject/{{object.COId}}" class="span2">
+                        <img ng-src="{{object.MediaObjects.Media[0].small}}" class="thumbnail"/>
+                    </a>
+                    <div class="media-body">
+                        <h4><a ng-href="#/viewobject/{{object.COId}}">{{object.Object}}</a></h4>
+                        <p><strong>Accession Number:</strong> {{object.AccessionNumber}}</p>
+                        <p><Strong>Museum:</Strong> {{object.Museum}}</p>
+                        <p>{{object.Description | truncate:100}}</p>
+                        <p><a href="#/viewobject/{{object.COId}}">More...</a>
+                    </div>
+                    </div>
+                </li>
+            </ul>

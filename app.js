@@ -1,5 +1,5 @@
 
-var App = angular.module("RchMobile",["RchMobile.Search","ui.bootstrap"]);
+var App = angular.module("RchMobile",["RchMobile.Search","ui.bootstrap","filters"]);
 
 //configure route for the entire application
 App.config(["$routeProvider",function($routeProvider){
@@ -18,6 +18,15 @@ App.config(["$routeProvider",function($routeProvider){
        .when("/viewobject/:coid",{
         templateUrl: "views/view_object.html",
         controller: "ViewObjectController"
-       }).otherwise({redirectTo:"/"});
+       })
+       .when("/media_player/:amoid",{
+            templateUrl: "views/play_media.html",
+            controller: "ViewMediaController"
+       })
+       .when("/browse",{
+          templateUrl: "views/browse.html",
+          controller: "BrowseController"
+       })
+       .otherwise({redirectTo:"/"});
 }]);
 

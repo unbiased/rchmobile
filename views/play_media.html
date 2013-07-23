@@ -1,0 +1,35 @@
+ <div ng-controller="ViewMediaController" ng-init="load_video()">
+
+ <!-- load media objects -->
+ <div class="span12" ng-switch on="media.AssociatedMediaType">
+
+ <div class="auto-resizable-video video-js-box" ng-switch-when="Video">
+ 		<div class="video-js-box">
+            <video id="video_player" class="video-js" width="640" height="480" controls preload="auto" video-poster video-poster-url="{{media.media.large}}">
+<source ng-src= "{{media.media.media}}.ogv" type='video/ogg; codecs="theora, vorbis"' />
+                <source ng-src= "{{media.media.media}}.flv" type='video/flv; codecs="avc1.42E01E, mp4a.40.2"' />
+                <source ng-src= "{{media.media.media}}.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                <!-- Flash Fallback. Use any flash video player here. Make sure to keep the vjs-flash-fallback class. -->
+                <object id="flash_fallback_1" class="vjs-flash-fallback" width="640" height="480" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
+                    <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
+                    <param name="allowfullscreen" value="true" />
+                    <param name="flashvars" value='config={"playlist":[{"url": "{{media.media.media}}.flv","autoPlay":false,"autoBuffering":true}]}' />    
+                    <!-- Image Fallback. Typically the same as the poster image. -->
+                    <img ng-src="{{media.media.large}}" width="640" height="264" alt="Poster Image" title="No video playback capabilities." class="lightbox"/>
+                </object>
+            </video>
+
+  </div> <!-- end of video -->
+</div>
+<div class="audioplayer" ng-switch-when="Audio">
+	<audio id="audio" controls>
+		<source ng-src="{{media.media.media}}.mp3" type="audio/mp3"/>
+		<source ng-src="{{media.media.media}}.oga" type="audio/oga"/>
+	</audio>
+</div>
+
+<div ng-switch-default>Can't play media</div>
+
+</div>
+
+</div>

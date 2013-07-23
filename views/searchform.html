@@ -1,41 +1,43 @@
-<div ng-controller="SearchController"  ng-init="init()" >
-    <div class="well-large">
-        <form class="form-inline" name="searchForm">
-            <input type="text" ng-model="keywords" placeholder="Enter search" name="keywords" value=""> 
-            <button class="btn" ng-click="search_item()"><i class="icon-search"></i></button>
-          
-            <div ng-repeat="parameter in parameters" id="{{parameter.group}">
-                <strong>{{parameter.group}}</strong> 
-                <button ng-click="tickNone($index)" class="btn-mini" >Tick None</button>
+<div ng-controller="SearchController"  ng-init="init()" ng-switch="hide_form">
+    <div class="well-large" ng-switch-when="false">            
+    <form class="form-inline" name="searchForm">
+    <div class="span12">            
+    <input type="text" ng-model="keywords" placeholder="Enter search" name="keywords" value="" class="input-medium search-query"> 
+            <button class="btn" ng-click="search_item()"><i class="icon-search"></i></button><br/>
+    
+    </div>    
+          <tabset>
+            <tab ng-repeat="parameter in parameters" id="{{parameter.group}" heading="{{parameter.group}}" active="parameter.active" disabled="parameter.disabled">
+                 <button ng-click="tickNone($index)" class="btn-mini" >Tick None</button>
                 <button ng-click="tickAll($index)" class="btn-mini" >Tick All</button>
                 <ul>
                     <li ng-repeat="item in parameter.items">
-                        <input type="checkbox" ng-model="item.checked"> <label>{{item.name}}</label>
+                        <input type="checkbox" ng-model="item.checked" class="in-line"> <label>{{item.name}}</label>
                     </li>
                 </ul>
-            </div>
-        </form> 
+            </tab>
+            </tabset>
+    </form>    
     </div>
 <!--    Search Form section-->
-<div class="span12" id="searchResult">
-    <div id="resultsPage">
-        <div class="span12">
-            <div ng-repeat="object in search_results.data" ng-click="viewObject(object.COId)" class="row">
-                <div class="span12">
-                    <div class="inline">
-                        <img ng-src="{{object.MediaObjects.Images.small}}" />
+   <ul class="media-list thumbnails">
+        <li ng-repeat="object in search_results.data" class="media">
+                  <a class="pull-left" ng-href="#/viewobject/{{object.COId}}" class="span2">
+                        <img ng-src="{{object.MediaObjects.Media[0].small}}" class="thumbnail"/>
+                    </a>
+                    <div class="media-body">
+                        <h4><a ng-href="#/viewobject/{{object.COId}}">{{object.Object}}</a></h4>
+                        <p><strong>Accession Number:</strong> {{object.AccessionNumber}}</p>
+                        <p><Strong>Museum:</Strong> {{object.Museum}}</p>
+                        <p>{{object.Description | truncate:150}}</p>
+                        <p><a href="#/viewobject/{{object.COId}}">More...</a>
                     </div>
-                    <div>
-                        <strong>{{object.Object}}</strong><br/>
-                        <p>{{object.Description}}</p>
                     </div>
-                </div>
-            </div>
+                </li> 
+   </ul>    
+   <button ng-click="current_page = current_page - 1" >Previous</button> <button ng-click="current_page = current_page + 1">Next</button>
 
-        </div>
-        <button class="btn" ng-click="current_page=current_page-1">Previous</button> <button class="btn" ng-click="current_page=current_page+1">Next</button>
-    </div>
-    
+
 </div>
 
 
