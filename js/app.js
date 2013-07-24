@@ -30,7 +30,7 @@ App.config(["$routeProvider","$httpProvider",function($routeProvider,$httpProvid
        .otherwise({redirectTo:"/"});
 
        $httpProvider.defaults.useXDomain = true;
-  delete $httpProvider.defaults.headers.common["X-Requestd-With"];
+       delete $httpProvider.defaults.headers.common["X-Requestd-With"];
 }]);
 
 

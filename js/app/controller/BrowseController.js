@@ -20,6 +20,18 @@ App.controller("BrowseController",["$scope","searchSvc",function($scope,searchSv
 	$scope.displayCollections = function(data,status){
 		$scope.collections = data.data.data;
 		
-	}
+	};
+
+	$scope.$watch("current_page",function(newValue,oldValue){
+		if(newValue !== undefined && newValue > -1){
+			searchSvc.offset = $scope.current_page * searchSvc.pageSize;			
+		}else{
+			searchSvc.offset = 0;
+		}
+		searchSvc.get_collection_by_museum($scope.selected_museum.Museum).then($scope.displayCollections);
+		if($scope.current_page === 0){
+			$scope.disable_prev_btn = true;
+		}
+	});
 
 }]);

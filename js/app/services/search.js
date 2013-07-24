@@ -4,7 +4,7 @@ var searchService = angular.module("RchMobile.Search", []);
 searchService.service("searchSvc", ["$http", function($http) {
         var search = {};
         //set default path to webservice API
-        var baseUrl = "http://uos-rch-mobile.eu01.aws.af.cm/index.php/api/";
+        var baseUrl = "http://rch.eu01.aws.af.cm/index.php/api/";
 
         var searchResult;
         search.offset = 0;
