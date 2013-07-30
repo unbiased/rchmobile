@@ -1,16 +1,26 @@
 <div ng-controller="SearchController"  ng-init="init()" ng-switch="hide_form">
     <div class="well-large" ng-switch-when="false">            
     <form class="form-inline" name="searchForm">
-    <div class="span12">            
-    <input type="text" ng-model="keywords" placeholder="Enter search" name="keywords" value="" class="input-medium search-query"> 
-            <button class="btn" ng-click="search_item()"><i class="icon-search"></i></button><br/>
-    
-    </div>    
-          <tabset>
+    <div class="span12">  
+<div class="input-group">	
+    <input type="text" ng-model="keywords" placeholder="Enter search" name="keywords" value="" class="input-large  form-control"> 
+			<span class="input-group-btn">
+			<button class="btn btn-primary" ng-click="search_item()" type="button"><i class="icon-search icon-white"></i></button>
+      </span>
+    </div>
+	<div class="clearh10"></div>
+    </div> 
+          <tabset class="mytab">
             <tab ng-repeat="parameter in parameters" id="{{parameter.group}" heading="{{parameter.group}}" active="parameter.active" disabled="parameter.disabled">
-                 <button ng-click="tickNone($index)" class="btn-mini" >Tick None</button>
-                <button ng-click="tickAll($index)" class="btn-mini" >Tick All</button>
-                <ul>
+				<div class="btn-group">				
+                 <button ng-click="tickNone($index)" class="btn  btn-default" type="button" class="btn btn-default">
+					<i class="icon-check"></i>
+				 </button>
+					<button ng-click="tickAll($index)" class="btn btn-default" type="button" class="btn btn-default">
+						<i class="icon-list-alt"></i>
+					</button>
+				</div>
+                <ul class="noliststyle">
                     <li ng-repeat="item in parameter.items">
                         <input type="checkbox" ng-model="item.checked" class="in-line"> <label>{{item.name}}</label>
                     </li>
@@ -35,7 +45,14 @@
                     </div>
                 </li> 
    </ul>    
-   <button ng-click="current_page = current_page - 1" >Previous</button> <button ng-click="current_page = current_page + 1">Next</button>
+   
+   <div class="btn-group">		
+<button ng-click="current_page = current_page - 1" class="btn  btn-default" type="button">
+<i class="icon-chevron-left"></i></button> 
+<button ng-click="current_page = current_page + 1" class="btn  btn-default" type="button">
+<i class="icon-chevron-right"></i></button>  
+				</div>
+   
 
 
 </div>

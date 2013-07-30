@@ -11,19 +11,45 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/bootstrap.min.css" media="screen"/>
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css" /> 
         <link rel="stylesheet" href="css/mediaelementplayer.min.css"> 
-        <link rel="stylesheet" type="text/css" href="css/app.css">      
+        <link rel="stylesheet" type="text/css" href="css/app.css">     
+        <link rel="stylesheet" type="text/css" href="css/custom.css">      
     </head>
     <body>
-        <div class="container">
-            <header><h2>Sierraleone Mobile App</h2></header>
-            <nav>
-                <ul>
-                    <li><a href="#/home">Home</a></li>
-                    <li><a href="#/search">Search</a></li>
-                    <li><a href="#/browse">Browser</a></li>
-                </ul>
-            </nav>
-            <div ng-view></div>
+		<div class="navbar navbar-inverse  navbar-fixed-top ">
+                    <div class="navbar-inner">
+                        <div class="container">
+                            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                              </a>
+                            <a class="brand" href="~/Home/Index"></a>
+                            <div class="nav-collapse collapse">
+                            <ul class="nav">
+                                <li><a href="#/home"><i class="icon-home icon-white"></i>Home</a></li>
+								<li><a href="#/search">Search</a></li>
+								<li><a href="#/browse">Browser</a></li>
+                            </ul>    
+                            </div>                    
+                        </div>
+                    </div>
+                </div>
+
+		<header>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3">
+                    <a href="#/home">
+						<img src="img/logo3.png" class="" width="100%"/>
+					</a>
+                </div>
+            </div>
+        </div>
+    </header>
+        <div class="container-fluid">  
+            <div class="row-fluid"> 
+				<div ng-view></div>
+            </div>
         </div>
 <!--        Load required JavaScript-->
         <script type="text/javascript" src="js/lib/jquery.js"></script>
